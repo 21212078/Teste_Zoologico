@@ -11,11 +11,11 @@ float calcular_preco(int idade, int quantidade) {
     float preco_unitario;
 
     if (idade <= 12) {
-        preco_unitario = 10.0; // Criança
+        preco_unitario = 10; // Criança
     } else if (idade >= 13 && idade <= 59) {
-        preco_unitario = 30.0; // Adulto
+        preco_unitario = 30; // Adulto
     } else {
-        preco_unitario = 15.0; // Idoso
+        preco_unitario = 15; // Idoso
     }
 
     return preco_unitario * quantidade;
