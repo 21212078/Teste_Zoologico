@@ -23,7 +23,8 @@ jobs:
 
     # Compilar o projeto
     - name: Build the project
-      run: gcc -o unitario Zoologico/teste/teste.c
+      run: gcc -I Zoologico/include -o unitario Zoologico/teste/teste.c
+
 
     # Executar o teste
     - name: Run unit tests
