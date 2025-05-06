@@ -10,10 +10,10 @@
 
 // Testes
 int test_validos() {
-    mu_assert("Erro no teste 1: Criança com 1 bilhete", calcular_preco(10, 1) == 10.0);
-    mu_assert("Erro no teste 2: Adulto com 1 bilhete", calcular_preco(30, 1) == 30.0);
-    mu_assert("Erro no teste 3: Idoso com 1 bilhete", calcular_preco(65, 1) == 15.0);
-    mu_assert("Erro no teste 4: Adulto com 5 bilhetes", calcular_preco(40, 5) == 150.0);
+    mu_assert("Erro no teste 1: Criança com 1 bilhete", calcular_preco(10, 1) == 10);
+    mu_assert("Erro no teste 2: Adulto com 1 bilhete", calcular_preco(30, 1) == 30);
+    mu_assert("Erro no teste 3: Idoso com 1 bilhete", calcular_preco(65, 1) == 15);
+    mu_assert("Erro no teste 4: Adulto com 5 bilhetes", calcular_preco(40, 5) == 150);
     return 0;
 }
 
