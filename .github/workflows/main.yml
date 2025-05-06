@@ -1,34 +1,30 @@
-name: Integração Contínua com Minunit
+name: Compilar e Testar Zoológico
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Fazer o checkout the code
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Clonar repositório
+      uses: actions/checkout@v3
 
-    # Preparar o ambiente para rodar aplicações em C
-    - name: Install build essentials
-      run: sudo apt-get install build-essential
+    - name: Verificar estrutura de arquivos
+      run: |
+        echo "Listando arquivos:"
+        ls -R Zoologico
 
-    # Compilar o projeto
-    - name: Build the project
-      run: gcc -I Zoologico/src \
+    - name: Compilar teste com implementação
+      run: |
+        gcc -I Zoologico/src \
             Zoologico/src/zoologico.c \
             Zoologico/teste/teste.c \
             -o unitario
 
-
-    # Executar o teste
-    - name: Run unit tests
+    - name: Executar testes
       run: ./unitario
